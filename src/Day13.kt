@@ -37,7 +37,5 @@ class Day13 {
         File("inputs/day13.txt").readLines()[1].split(",").withIndex().filter { it.value != "x" }
             .joinToString(" && ") { (i, v) -> "(x+$i) mod $v = 0" }.let { URLEncoder.encode(it) }
             .let { eq -> Desktop.getDesktop().browse(URL("https://www.wolframalpha.com/input/?i=$eq").toURI()) }
-
-
     }
 }
